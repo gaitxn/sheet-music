@@ -1,0 +1,44 @@
+\header {
+  title = ""
+  %subtitle = ""
+  composer = ""
+  tagline = ##f
+}
+
+\paper {
+  #(set-paper-size "letter")
+    top-margin = 10
+    left-margin = 15
+    right-margin = 15
+    bottom-margin = 10
+}
+
+\score{
+\parallelMusic voiceA,voiceB,voiceC,voiceD {
+\numericTimeSignature
+\time 3/4
+\repeat volta 2 {
+
+  }
+\alternative{
+  {}
+  {}
+  }
+\repeat volta 2 {
+
+  }
+\alternative{
+  {}
+  {}
+  }
+\new StaffGroup <<
+  \new Staff = "up"<<
+  \key g \major \voiceA \\ \voiceB >>
+  \new Staff = "down" { \clef bass <<
+  \key g \major \voiceC \\ \voiceD>> }
+>>
+\layout{}
+\midi {
+\tempo 4 = 80
+}
+}
